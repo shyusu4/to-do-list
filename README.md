@@ -1,10 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
-# To-Do-List
-> A simple to-do-list. The user can add, delete, or edit a task. They can also remove all completed tasks.
+# To Do List
+> A simple to-do-list. The user can add, delete, or edit a task. They can also remove all completed tasks. This web page was built using webpack and served by a webpack dev server.
 
 ## Live Demo
 
-- [Live]()
+[Live]()
 
 ## Built with
 
