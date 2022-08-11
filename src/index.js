@@ -41,8 +41,7 @@ const displayTodo = (todos) => {
     todoItem.innerHTML = `
       <input type="checkbox" class="checkbox" ${checked}>
       ${item.description}
-      <button class="delete-button">X</button>
-    `;
+      <button class="delete-button">X</button>`;
     todoList.append(todoItem);
   });
 };
@@ -73,6 +72,9 @@ const deleteTodo = (index) => {
   todos = todos.filter(function(item) {
     return item.index != index;
   });
+  for (let i = todos.length - 1; i >= 0; i -= 1) {
+    todos[i].index = i;
+  }
   addToLocalStorage(todos);
 };
 
