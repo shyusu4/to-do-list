@@ -31,7 +31,7 @@ h1 {
   font-weight: bold;
 }
 
-.todo-item {
+.item {
   width: 100%;
   list-style: none;
   display: flex;
@@ -41,17 +41,49 @@ h1 {
   border-bottom: 1px solid #e9e9e9;
 }
 
-.todo-input {
+.add-button {
+  display: none;
+}
+
+.todo-box {
   width: 100%;
-  height: 60px;
+  height: 55px;
   overflow: hidden;
-  border: none;
-  font-style: italic;
-  font-size: 17px;
   border-bottom: 1px solid #e9e9e9;
   border-top: 1px solid #e9e9e9;
   padding-left: 10px;
 }
+
+.todo-input {
+  width: 85%;
+  padding: 20px 0;
+  font-style: italic;
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+
+.arrow {
+  font-size: 22px;
+  padding: 15px;
+  color: gray;
+}
+
+.delete-button {
+  display: none;
+}
+
+.delete-button.show {
+  display: block;
+}
+
+/* .ellipsis {
+  display: none;
+}
+
+.ellipsis.show {
+  display: block;
+} */
 
 .clear {
   border: none;

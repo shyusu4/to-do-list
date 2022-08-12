@@ -41,7 +41,8 @@ const displayTodo = (todos) => {
     todoItem.innerHTML = `
       <input type="checkbox" class="checkbox" ${checked}>
       ${item.description}
-      <button class="delete-button">X</button>`;
+      <span class="ellipsis">&#8942;</span>
+      <span class="delete-button">&#10005;</span>`;
     todoList.append(todoItem);
   });
 };
@@ -60,9 +61,11 @@ const getFromLocalStorage = () => {
 };
 
 const toggle = (index) => {
+  const deleteButton = document.querySelector('.delete-button');
   todos.forEach(function(item) {
     if (item.index == index) {
       item.completed = !item.completed;
+      deleteButton.classList.add('.show');
     }
   });
   addToLocalStorage(todos);
