@@ -1,7 +1,7 @@
 {
   "name": "to-do-list",
   "version": "1.0.0",
-  "description": "",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet)\r # To Do List\r > A simple to-do-list. The user can add, delete, or edit a task. They can also remove all completed tasks. This web page was built using webpack and served by a webpack dev server.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
