@@ -82,10 +82,10 @@ i {
   cursor: pointer;
 }
 
-.task {
+.task-class {
   border: none;
 }
 
-.task:focus {
+.task-class:focus {
   outline: none;
 }

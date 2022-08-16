@@ -5,6 +5,7 @@ const todoForm = document.querySelector('.todo-form');
 const todoList = document.querySelector('.todo-list');
 const todoInput = document.querySelector('.todo-input');
 const addBtn = document.querySelector('.add-button');
+const clearBtn = document.querySelector('.clear-button');
 const list = new List();
 list.loadTasks();
  
@@ -16,6 +17,11 @@ const load = () => {
     list.loadTasks();
   }
 };
+
+clearBtn.addEventListener('click', () => {
+  list.clearAll();
+  list.loadTasks();
+});
  
 todoForm.addEventListener('submit', (e) => {
   e.preventDefault();

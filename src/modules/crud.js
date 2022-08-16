@@ -39,6 +39,11 @@ class List {
       }
     });
   }
+
+  clearAll() {
+    this.todos = this.todos.filter((task) => task.completed === false);
+    this.saveLS();
+  }
  
   loadTasks() {
     const todoList = document.querySelector('.todo-list');
@@ -46,7 +51,7 @@ class List {
       `<div class="todo-item">
        <div id="${task.index}">
         <input type="checkbox" name="box" class="checkbox" ${task.completed ? 'checked' : ''} id=${task.index}>
-        <input id="${task.index}" class=${task.completed ? 'checked task' : 'task'} value="${task.description}" type="text">
+        <input id="${task.index}" class=${task.completed ? 'checked task-class' : 'task-class'} value="${task.description}" type="text">
        </div>
        <button class="remove-button" id="${task.index}">
        <i class="fa-solid fa-trash-can"></i>
@@ -57,15 +62,27 @@ class List {
     todoList.innerHTML = '';
     this.todos.forEach((task) => todoList.insertAdjacentHTML('beforeend', createItem(task)));
     const check = document.querySelectorAll('.checkbox');
-    const task = todoList.querySelectorAll('.task');
+    const taskClass = todoList.querySelectorAll('.task-class');
    
     check.forEach((checkbox, id) => {
       checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
-          task[id]?.classList.add('checked');
+          taskClass[id]?.classList.add('checked');
+          this.todos = this.todos.map((task) => {
+            if (task.index === parseInt(checkbox.parentElement.id, 10)) {
+              task.completed = true;
+            }
+            return task;
+          });
           this.saveLS();
         } else {
-          task[id]?.classList.remove('checked');
+          taskClass[id]?.classList.remove('checked');
+          this.todos = this.todos.map((task) => {
+            if (task.index === parseInt(checkbox.parentElement.id, 10)) {
+              task.completed = false;
+            }
+            return task;
+          });
           this.saveLS();
         }
       });
@@ -83,7 +100,7 @@ class List {
       });
     });
    
-    task.forEach((textarea) => {
+    taskClass.forEach((textarea) => {
       textarea.addEventListener('change', () => {
         this.todos[textarea.id - 1].description = textarea.value;
         this.saveLS();
