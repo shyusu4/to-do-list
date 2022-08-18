@@ -4,7 +4,7 @@
 
 ## Live Demo
 
-[Live]()
+[Live](https://shyusu4.github.io/To-Do-List/dist/)
 
 ## Built with
 
@@ -43,4 +43,4 @@ Microverse
 
 ## 📝 License
 
-This project is [MIT](https://github.com/shyusu4/To-Do-List/blob/list-structure/MIT.md) licensed.
+This project is [MIT](https://github.com/shyusu4/To-Do-List/blob/main/MIT.md) licensed.
