@@ -16,4 +16,11 @@ describe('check add and remove functions', () => {
     todoList.addTodo(todo);
     expect(todoList.todos.length).toBe(1);
   });
+  it('remove task', ()=>{
+    //act
+    todoList.remove(todo.index)
+    //assert
+    expect(todoList.todos.length).toBe(0);
+
+  });
 });
