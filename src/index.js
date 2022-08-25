@@ -10,8 +10,8 @@ const list = new List();
 list.loadTasks();
  
 const load = () => {
-  if (todoInput.value.trim()) {
-    list.addTodo(todoInput.value);
+  if (todoInput.value) {
+    list.addTodo(todoInput.value.trim());
     todoList.innerHTML = '';
     todoInput.value = '';
     list.loadTasks();
