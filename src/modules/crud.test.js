@@ -28,15 +28,26 @@ describe('check add and remove functions', () => {
 });
 
 describe('check edit, update, and clear functions', () => {
-  const todo = {
-    description: 'go to the gym',
-    completed: false,
-    index: 1,
-  };
+  document.body.innerHTML = `
+  <ul class="todo-list"></ul>
+  `;
 
   test('edit task', () => {
+    const todo = {
+      description: 'go to the gym',
+      completed: false,
+      index: 1,
+    };
     todoList.addTodo(todo);
     todoList.editTodo(1, 'Water plants');
     expect(todoList.todos[0].description).toBe('Water plants');
+  });
+
+  test('complete task', () => {
+    todoList.loadTasks();
+    const checkbox = document.querySelector('.checkbox');
+    checkbox.click();
+    console.log(todoList.todos);
+    expect(todoList.todos[0].completed).toBe(true);
   });
 });

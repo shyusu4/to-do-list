@@ -61,32 +61,9 @@ class List {
     this.getLS();
     todoList.innerHTML = '';
     this.todos.forEach((task) => todoList.insertAdjacentHTML('beforeend', createItem(task)));
-    const check = document.querySelectorAll('.checkbox');
+    // const check = document.querySelectorAll('.checkbox');
     const taskClass = todoList.querySelectorAll('.task-class');
-  
-    check.forEach((checkbox, id) => {
-      checkbox.addEventListener('change', () => {
-        if (checkbox.checked) {
-          taskClass[id]?.classList.add('checked');
-          this.todos = this.todos.map((task) => {
-            if (task.index === parseInt(checkbox.parentElement.id, 10)) {
-              task.completed = true;
-            }
-            return task;
-          });
-          this.saveLS();
-        } else {
-          taskClass[id]?.classList.remove('checked');
-          this.todos = this.todos.map((task) => {
-            if (task.index === parseInt(checkbox.parentElement.id, 10)) {
-              task.completed = false;
-            }
-            return task;
-          });
-          this.saveLS();
-        }
-      });
-    });
+    this.completeTodo();
     
     const removeBtn = document.querySelectorAll('.remove-button');
     removeBtn.forEach((btn) => {
@@ -116,6 +93,34 @@ class List {
       return todo;
     });
     this.saveLS();
+  }
+
+  completeTodo() {
+    const check = document.querySelectorAll('.checkbox');
+    const taskClass = document.querySelectorAll('.task-class');
+    check.forEach((checkbox, id) => {
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          taskClass[id]?.classList.add('checked');
+          this.todos = this.todos.map((task) => {
+            if (task.index === parseInt(checkbox.parentElement.id, 10)) {
+              task.completed = true;
+            }
+            return task;
+          });
+          this.saveLS();
+        } else {
+          taskClass[id]?.classList.remove('checked');
+          this.todos = this.todos.map((task) => {
+            if (task.index === parseInt(checkbox.parentElement.id, 10)) {
+              task.completed = false;
+            }
+            return task;
+          });
+          this.saveLS();
+        }
+      });
+    });
   }
 }
  
