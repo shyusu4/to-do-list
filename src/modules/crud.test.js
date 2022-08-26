@@ -47,7 +47,11 @@ describe('check edit, update, and clear functions', () => {
     todoList.loadTasks();
     const checkbox = document.querySelector('.checkbox');
     checkbox.click();
-    console.log(todoList.todos);
     expect(todoList.todos[0].completed).toBe(true);
+  });
+
+  it('clear all completed task', ()=>{
+    todoList.clearAll();
+    expect(todoList.todos.length).toBe(0);
   });
 });
