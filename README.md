@@ -29,6 +29,11 @@
 - GitHub: [@shyusu4](https://github.com/shyusu4)
 - LinkedIn: [Shakhrizoda Yusupova](https://www.linkedin.com/in/shakhrizoda-yusupova-789253229/?originalSubdomain=uz)
 
+👤 **Degisew Mengist**
+- GitHub: [degisew](https://github.com/degisew)
+- Twitter: [@DJ_etiya](https://twitter.com/@DJ_etiya)
+- LinkedIn: [jegisew21](https://www.linkedin.com/in/degisew-mengist-390098219)
+
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome!
 

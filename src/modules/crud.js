@@ -61,9 +61,43 @@ class List {
     this.getLS();
     todoList.innerHTML = '';
     this.todos.forEach((task) => todoList.insertAdjacentHTML('beforeend', createItem(task)));
-    const check = document.querySelectorAll('.checkbox');
+    // const check = document.querySelectorAll('.checkbox');
     const taskClass = todoList.querySelectorAll('.task-class');
+    this.completeTodo();
+    
+    const removeBtn = document.querySelectorAll('.remove-button');
+    removeBtn.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const{id} = e.currentTarget;
+        this.remove(id);
+        this.saveLS();
+        todoList.innerHTML = '';
+        this.loadTasks(this.todos);
+      });
+    });
    
+    taskClass.forEach((textarea) => {
+      textarea.addEventListener('change', () => {
+        this.todos[textarea.id - 1].description = textarea.value;
+        this.saveLS();
+      });
+    });
+  }
+
+  editTodo(id, description) {
+    this.todos = this.todos.map((todo) => {
+      if (todo.index === id) {
+        return { ...todo, description: description };
+      }
+      return todo;
+    });
+    this.saveLS();
+  }
+
+  completeTodo() {
+    const check = document.querySelectorAll('.checkbox');
+    const taskClass = document.querySelectorAll('.task-class');
     check.forEach((checkbox, id) => {
       checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
@@ -85,25 +119,6 @@ class List {
           });
           this.saveLS();
         }
-      });
-    });
-   
-    const removeBtn = document.querySelectorAll('.remove-button');
-    removeBtn.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const{id} = e.currentTarget;
-        this.remove(id);
-        this.saveLS();
-        todoList.innerHTML = '';
-        this.loadTasks(this.todos);
-      });
-    });
-   
-    taskClass.forEach((textarea) => {
-      textarea.addEventListener('change', () => {
-        this.todos[textarea.id - 1].description = textarea.value;
-        this.saveLS();
       });
     });
   }
