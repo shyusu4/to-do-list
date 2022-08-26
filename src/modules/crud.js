@@ -63,7 +63,7 @@ class List {
     this.todos.forEach((task) => todoList.insertAdjacentHTML('beforeend', createItem(task)));
     const check = document.querySelectorAll('.checkbox');
     const taskClass = todoList.querySelectorAll('.task-class');
-   
+  
     check.forEach((checkbox, id) => {
       checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
@@ -87,7 +87,7 @@ class List {
         }
       });
     });
-   
+    
     const removeBtn = document.querySelectorAll('.remove-button');
     removeBtn.forEach((btn) => {
       btn.addEventListener('click', (e) => {
@@ -106,6 +106,16 @@ class List {
         this.saveLS();
       });
     });
+  }
+
+  editTodo(id, description) {
+    this.todos = this.todos.map((todo) => {
+      if (todo.index === id) {
+        return { ...todo, description: description };
+      }
+      return todo;
+    });
+    this.saveLS();
   }
 }
  
