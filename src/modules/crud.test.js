@@ -51,7 +51,9 @@ describe('check edit, update, and clear functions', () => {
   });
 
   it('clear all completed task', ()=>{
+    //act
     todoList.clearAll();
+    //assert
     expect(todoList.todos.length).toBe(0);
   });
 });
