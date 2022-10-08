@@ -33,7 +33,7 @@
 - Twitter: [@shyusu4](https://twitter.com/shyusu4)
 - LinkedIn: [Shakhrizoda Yusupova](https://www.linkedin.com/in/shyusu4/)
 
-👤 **Degisew Mengist**
+👤 Degisew Mengist
 - GitHub: [degisew](https://github.com/degisew)
 - Twitter: [@DJ_etiya](https://twitter.com/@DJ_etiya)
 - LinkedIn: [jegisew21](https://www.linkedin.com/in/degisew-mengist-390098219)
