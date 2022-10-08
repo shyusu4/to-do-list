@@ -2,6 +2,10 @@
 # To Do List
 > A simple to-do-list. The user can add, delete, or edit a task. They can also remove all completed tasks. This web page was built using webpack and served by a webpack dev server.
 
+## Preview
+
+![Website preview](./src/mockup.png)
+
 ## Live Demo
 
 [Live](https://shyusu4.github.io/To-Do-List/dist/)
@@ -11,7 +15,6 @@
 - HTML/CSS
 - JavaScript
 - Webpack
-- npm
 
 ## Getting Started
 
@@ -27,7 +30,8 @@
 👤 Shakhrizoda Yusupova
 
 - GitHub: [@shyusu4](https://github.com/shyusu4)
-- LinkedIn: [Shakhrizoda Yusupova](https://www.linkedin.com/in/shakhrizoda-yusupova-789253229/?originalSubdomain=uz)
+- Twitter: [@shyusu4](https://twitter.com/shyusu4)
+- LinkedIn: [Shakhrizoda Yusupova](https://www.linkedin.com/in/shyusu4/)
 
 👤 **Degisew Mengist**
 - GitHub: [degisew](https://github.com/degisew)
